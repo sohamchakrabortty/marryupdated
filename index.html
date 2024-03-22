@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myButton {
+            position: relative;
+            transition: transform 0.3s ease; /* Add smooth transition */
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 100vh;width:100vw; background-color: pink;">
+        <div><h1>Will you marry me?</h1></div>
+        <button id="yes">Yes</button>
+        <button id="myButton">No</button>
+    </div>
+
+    <script>
+        const button = document.getElementById('myButton');
+        const yes = document.getElementById('yes');
+
+        yes.onclick = function() {
+            alert("Thank you so much, madamji!");
+        };
+     
+       
+        function moveButton() {
+            const newPositionX = Math.random() * (window.innerWidth*.7 - button.offsetWidth);
+            const newPositionY = Math.random() * (window.innerHeight*.7 - button.offsetHeight);
+
+            button.style.transform = `translate(${newPositionX}px, ${newPositionY}px)`;
+        }
+
+ 
+        button.addEventListener('click', moveButton);
+
+      
+        // button.addEventListener('mouseleave', function() {
+        //     button.style.transform = 'translate(0, 0)';
+        // });
+    </script>
+</body>
+</html>
